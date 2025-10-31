@@ -1,0 +1,34 @@
+Q120. Write a program to take a string input. Change it to sentence case.
+
+
+#include <stdio.h>
+#include <ctype.h>
+
+void toSentenceCase(char str[]) {
+    int i = 0;
+    // Convert entire string to lowercase first
+    while (str[i]) {
+        str[i] = tolower(str[i]);
+        i++;
+    }
+    // Capitalize the first alphabetic character
+    i = 0;
+    while (str[i] && !isalpha(str[i])) {
+        i++;
+    }
+    if (str[i]) {
+        str[i] = toupper(str[i]);
+    }
+}
+
+int main() {
+    char str[1000];
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    toSentenceCase(str);
+
+    printf("Sentence case: %s", str);
+
+    return 0;
+}
