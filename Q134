@@ -1,0 +1,36 @@
+Define an enum with SUCCESS, FAILURE, and TIMEOUT, and print messages accordingly.
+
+
+#include <stdio.h>
+
+enum Status {
+    SUCCESS = 1,
+    FAILURE,
+    TIMEOUT
+};
+
+int main() {
+    int code;
+
+    printf("Enter status code (1-SUCCESS, 2-FAILURE, 3-TIMEOUT): ");
+    scanf("%d", &code);
+
+    switch (code) {
+        case SUCCESS:
+            printf("Operation completed successfully.\n");
+            break;
+
+        case FAILURE:
+            printf("Operation failed.\n");
+            break;
+
+        case TIMEOUT:
+            printf("Operation timed out.\n");
+            break;
+
+        default:
+            printf("Invalid status code! Please enter 1, 2, or 3.\n");
+    }
+
+    return 0;
+}
