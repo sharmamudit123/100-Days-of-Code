@@ -1,0 +1,29 @@
+Print all enum names and integer values using a loop.
+
+
+#include <stdio.h>
+
+enum Role {
+    ADMIN = 1,
+    USER,
+    GUEST
+};
+
+int main() {
+
+    // Parallel array of enum names
+    char *roleNames[] = {"ADMIN", "USER", "GUEST"};
+
+    // Store enum values in another array
+    int roleValues[] = {ADMIN, USER, GUEST};
+
+    int size = 3;
+
+    printf("Enum Names and Their Values:\n");
+
+    for (int i = 0; i < size; i++) {
+        printf("%s = %d\n", roleNames[i], roleValues[i]);
+    }
+
+    return 0;
+}
